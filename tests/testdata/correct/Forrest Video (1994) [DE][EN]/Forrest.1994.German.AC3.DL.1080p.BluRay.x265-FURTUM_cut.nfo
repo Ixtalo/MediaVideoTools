@@ -1,0 +1,477 @@
+General
+Count                                    : 332
+Count of stream of this kind             : 1
+Kind of stream                           : General
+Kind of stream                           : General
+Stream identifier                        : 0
+Unique ID                                : 195882468980952914457383297862531815403
+Unique ID                                : 195882468980952914457383297862531815403 (0x935D975CC1801311F34411428C2417EB)
+Count of video streams                   : 1
+Count of audio streams                   : 2
+Count of text streams                    : 6
+Video_Format_List                        : HEVC
+Video_Format_WithHint_List               : HEVC
+Codecs Video                             : HEVC
+Audio_Format_List                        : AC-3 / DTS
+Audio_Format_WithHint_List               : AC-3 / DTS
+Audio codecs                             : AC-3 / DTS
+Text_Format_List                         : PGS / PGS / PGS / PGS / PGS / PGS
+Text_Format_WithHint_List                : PGS / PGS / PGS / PGS / PGS / PGS
+Text codecs                              : PGS / PGS / PGS / PGS / PGS / PGS
+Complete name                            : Forrest.Gump.1994.German.AC3.DL.1080p.BluRay.x265-FURTUM_cut.mkv
+File name extension                      : Forrest.Gump.1994.German.AC3.DL.1080p.BluRay.x265-FURTUM_cut.mkv
+File name                                : Forrest.Gump.1994.German.AC3.DL.1080p.BluRay.x265-FURTUM_cut
+File extension                           : mkv
+Format                                   : Matroska
+Format                                   : Matroska
+Format/Url                               : https://matroska.org/downloads/windows.html
+Format/Extensions usually used           : mkv mk3d mka mks
+Commercial name                          : Matroska
+Format version                           : Version 4
+File size                                : 278565
+File size                                : 272 KiB
+File size                                : 272 KiB
+File size                                : 272 KiB
+File size                                : 272 KiB
+File size                                : 272.0 KiB
+Duration                                 : 1009
+Duration                                 : 1 s 9 ms
+Duration                                 : 1 s 9 ms
+Duration                                 : 1 s 9 ms
+Duration                                 : 00:00:01.009
+Duration                                 : 02:22:11;13
+Duration                                 : 00:00:01.009 (02:22:11;13)
+Overall bit rate                         : 2208642
+Overall bit rate                         : 2 209 kb/s
+Frame rate                               : 23.976
+Frame rate                               : 23.976 FPS
+Frame count                              : 204501
+IsStreamable                             : Yes
+File last modification date              : UTC 2020-10-04 11:20:13
+File last modification date (local)      : 2020-10-04 13:20:13
+Writing application                      : Lavf58.20.100
+Writing application                      : Lavf58.20.100
+Writing library                          : Lavf58.20.100
+Writing library                          : Lavf58.20.100
+ErrorDetectionType                       : Per level 1
+
+Video
+Count                                    : 377
+Count of stream of this kind             : 1
+Kind of stream                           : Video
+Kind of stream                           : Video
+Stream identifier                        : 0
+StreamOrder                              : 0
+ID                                       : 1
+ID                                       : 1
+Unique ID                                : 1
+Format                                   : HEVC
+Format                                   : HEVC
+Format/Info                              : High Efficiency Video Coding
+Format/Url                               : http://www.itu.int
+Commercial name                          : HEVC
+Format profile                           : Main@L4@Main
+Internet media type                      : video/H265
+Codec ID                                 : V_MPEGH/ISO/HEVC
+Duration                                 : 0.000000
+Duration                                 : 00:00:00.000
+Duration                                 : 02:22:11;13
+Duration                                 : 00:00:00.000 (02:22:11;13)
+Bit rate                                 : 4207337
+Bit rate                                 : 4 207 kb/s
+Width                                    : 1920
+Width                                    : 1 920 pixels
+Height                                   : 816
+Height                                   : 816 pixels
+Sampled_Width                            : 1920
+Sampled_Height                           : 816
+Pixel aspect ratio                       : 1.000
+Display aspect ratio                     : 2.353
+Display aspect ratio                     : 2.35:1
+Frame rate mode                          : CFR
+Frame rate mode                          : Constant
+Frame rate                               : 23.976
+Frame rate                               : 23.976 (24000/1001) FPS
+FrameRate_Num                            : 24000
+FrameRate_Den                            : 1001
+Frame count                              : 204501
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Chroma subsampling                       : 4:2:0
+Bit depth                                : 8
+Bit depth                                : 8 bits
+Bits/(Pixel*Frame)                       : 0.112
+Stream size                              : 4485755577
+Stream size                              : 4.18 GiB
+Stream size                              : 4 GiB
+Stream size                              : 4.2 GiB
+Stream size                              : 4.18 GiB
+Stream size                              : 4.178 GiB
+Writing library                          : x265 - 1.8+2-55a4a9b920ff:[Windows][GCC 5.2.0][64 bit] 8bit+10bit+12bit
+Writing library                          : x265 1.8+2-55a4a9b920ff:[Windows][GCC 5.2.0][64 bit] 8bit+10bit+12bit
+Encoded_Library_Name                     : x265
+Encoded_Library_Version                  : 1.8+2-55a4a9b920ff:[Windows][GCC 5.2.0][64 bit] 8bit+10bit+12bit
+Encoding settings                        : wpp / ctu=64 / min-cu-size=8 / max-tu-size=32 / tu-intra-depth=1 / tu-inter-depth=1 / me=3 / subme=3 / merange=57 / rect / no-amp / max-merge=3 / temporal-mvp / no-early-skip / rdpenalty=0 / no-tskip / no-tskip-fast / strong-intra-smoothing / no-lossless / no-cu-lossless / no-constrained-intra / no-fast-intra / open-gop / no-temporal-layers / interlace=0 / keyint=250 / min-keyint=23 / scenecut=40 / rc-lookahead=25 / lookahead-slices=0 / bframes=4 / bframe-bias=0 / b-adapt=2 / ref=3 / limit-refs=0 / weightp / no-weightb / aq-mode=1 / qg-size=32 / aq-strength=1.00 / cbqpoffs=0 / crqpoffs=0 / rd=4 / psy-rd=0.30 / rdoq-level=2 / psy-rdoq=1.00 / signhide / deblock / sao / no-sao-non-deblock / b-pyramid / cutree / rc=crf / crf=20.0 / qcomp=0.60 / qpmin=0 / qpmax=51 / qpstep=4 / ipratio=1.40 / pbratio=1.30
+Default                                  : Yes
+Default                                  : Yes
+Forced                                   : No
+Forced                                   : No
+colour_description_present               : Yes
+colour_description_present_Source        : Container
+Color range                              : Limited
+colour_range_Source                      : Container
+
+Audio #1
+Count                                    : 301
+Count of stream of this kind             : 2
+Kind of stream                           : Audio
+Kind of stream                           : Audio
+Stream identifier                        : 0
+Stream identifier                        : 1
+StreamOrder                              : 1
+ID                                       : 2
+ID                                       : 2
+Unique ID                                : 2
+Format                                   : AC-3
+Format                                   : AC-3
+Format/Info                              : Audio Coding 3
+Format/Url                               : https://en.wikipedia.org/wiki/AC3
+Commercial name                          : Dolby Digital
+Commercial name                          : Dolby Digital
+Format settings, Endianness              : Big
+Codec ID                                 : A_AC3
+Duration                                 : 1000.000000
+Duration                                 : 1 s 0 ms
+Duration                                 : 1 s 0 ms
+Duration                                 : 1 s 0 ms
+Duration                                 : 00:00:01.000
+Duration                                 : 02:23:18:06
+Duration                                 : 00:00:01.000 (02:23:18:06)
+Bit rate mode                            : CBR
+Bit rate mode                            : Constant
+Bit rate                                 : 640000
+Bit rate                                 : 640 kb/s
+Channel(s)                               : 6
+Channel(s)                               : 6 channels
+Channel positions                        : Front: L C R, Side: L R, LFE
+Channel positions                        : 3/2/0.1
+Channel layout                           : L R C LFE Ls Rs
+Samples per frame                        : 1536
+Sampling rate                            : 48000
+Sampling rate                            : 48.0 kHz
+Samples count                            : 48000
+Frame rate                               : 31.250
+Frame rate                               : 31.250 FPS (1536 SPF)
+Frame count                              : 266544
+Bit depth                                : 32
+Bit depth                                : 32 bits
+Compression mode                         : Lossy
+Compression mode                         : Lossy
+Delay                                    : 8
+Delay                                    : 8 ms
+Delay                                    : 8 ms
+Delay                                    : 8 ms
+Delay                                    : 00:00:00.008
+Delay, origin                            : Container
+Delay, origin                            : Container
+Stream size                              : 682352640
+Stream size                              : 651 MiB
+Stream size                              : 651 MiB
+Stream size                              : 651 MiB
+Stream size                              : 651 MiB
+Stream size                              : 650.7 MiB
+Service kind                             : CM
+Service kind                             : Complete Main
+Default                                  : Yes
+Default                                  : Yes
+Forced                                   : No
+Forced                                   : No
+bsid                                     : 6
+dialnorm                                 : -27
+dialnorm                                 : -27 dB
+compr                                    : 6.02
+compr                                    : 6.02 dB
+acmod                                    : 7
+lfeon                                    : 1
+dialnorm_Average                         : -27
+dialnorm_Average                         : -27 dB
+dialnorm_Minimum                         : -27
+dialnorm_Minimum                         : -27 dB
+dialnorm_Maximum                         : -27
+dialnorm_Maximum                         : -27 dB
+dialnorm_Count                           : 31
+compr_Average                            : 6.02
+compr_Average                            : 6.02 dB
+compr_Minimum                            : 6.02
+compr_Minimum                            : 6.02 dB
+compr_Maximum                            : 6.02
+compr_Maximum                            : 6.02 dB
+compr_Count                              : 31
+
+Audio #2
+Count                                    : 280
+Count of stream of this kind             : 2
+Kind of stream                           : Audio
+Kind of stream                           : Audio
+Stream identifier                        : 1
+Stream identifier                        : 2
+StreamOrder                              : 2
+ID                                       : 3
+ID                                       : 3
+Unique ID                                : 3
+Format                                   : DTS
+Format                                   : DTS
+Format/Info                              : Digital Theater Systems
+Format/Url                               : https://en.wikipedia.org/wiki/DTS_(sound_system)
+Commercial name                          : DTS
+Mode                                     : 16
+Format settings, Endianness              : Big
+Codec ID                                 : A_DTS
+Duration                                 : 1009.000000
+Duration                                 : 1 s 9 ms
+Duration                                 : 1 s 9 ms
+Duration                                 : 1 s 9 ms
+Duration                                 : 00:00:01.009
+Duration                                 : 02:21:46:66
+Duration                                 : 00:00:01.009 (02:21:46:66)
+Bit rate mode                            : CBR
+Bit rate mode                            : Constant
+Bit rate                                 : 1509000
+Bit rate                                 : 1 509 kb/s
+Channel(s)                               : 6
+Channel(s)                               : 6 channels
+Channel positions                        : Front: L C R, Side: L R, LFE
+Channel positions                        : 3/2/0.1
+Channel layout                           : C L R Ls Rs LFE
+Samples per frame                        : 512
+Sampling rate                            : 48000
+Sampling rate                            : 48.0 kHz
+Samples count                            : 48432
+Frame rate                               : 93.750
+Frame rate                               : 93.750 FPS (512 SPF)
+Frame count                              : 799630
+Bit depth                                : 24
+Bit depth                                : 24 bits
+Compression mode                         : Lossy
+Compression mode                         : Lossy
+Delay                                    : 7
+Delay                                    : 7 ms
+Delay                                    : 7 ms
+Delay                                    : 7 ms
+Delay                                    : 00:00:00.007
+Delay, origin                            : Container
+Delay, origin                            : Container
+Stream size                              : 1608855560
+Stream size                              : 1.50 GiB
+Stream size                              : 1 GiB
+Stream size                              : 1.5 GiB
+Stream size                              : 1.50 GiB
+Stream size                              : 1.498 GiB
+Default                                  : No
+Default                                  : No
+Forced                                   : No
+Forced                                   : No
+
+Text #1
+Count                                    : 238
+Count of stream of this kind             : 6
+Kind of stream                           : Text
+Kind of stream                           : Text
+Stream identifier                        : 0
+Stream identifier                        : 1
+StreamOrder                              : 3
+ID                                       : 4
+ID                                       : 4
+Unique ID                                : 4
+Format                                   : PGS
+Format                                   : PGS
+Commercial name                          : PGS
+Codec ID                                 : S_HDMV/PGS
+Codec ID/Info                            : Picture based subtitle format used on BDs/HD-DVDs
+Duration                                 : 0.000000
+Duration                                 : 00:00:00.000
+Duration                                 : 00:00:00.000
+Bit rate                                 : 9808
+Bit rate                                 : 9 808 b/s
+Frame count                              : 2514
+Count of elements                        : 2514
+Stream size                              : 10212161
+Stream size                              : 9.74 MiB
+Stream size                              : 10 MiB
+Stream size                              : 9.7 MiB
+Stream size                              : 9.74 MiB
+Stream size                              : 9.739 MiB
+Default                                  : Yes
+Default                                  : Yes
+Forced                                   : No
+Forced                                   : No
+
+Text #2
+Count                                    : 238
+Count of stream of this kind             : 6
+Kind of stream                           : Text
+Kind of stream                           : Text
+Stream identifier                        : 1
+Stream identifier                        : 2
+StreamOrder                              : 4
+ID                                       : 5
+ID                                       : 5
+Unique ID                                : 5
+Format                                   : PGS
+Format                                   : PGS
+Commercial name                          : PGS
+Codec ID                                 : S_HDMV/PGS
+Codec ID/Info                            : Picture based subtitle format used on BDs/HD-DVDs
+Duration                                 : 0.000000
+Duration                                 : 00:00:00.000
+Duration                                 : 00:00:00.000
+Bit rate                                 : 11433
+Bit rate                                 : 11.4 kb/s
+Frame count                              : 3084
+Count of elements                        : 3084
+Stream size                              : 11205500
+Stream size                              : 10.7 MiB
+Stream size                              : 11 MiB
+Stream size                              : 11 MiB
+Stream size                              : 10.7 MiB
+Stream size                              : 10.69 MiB
+Default                                  : No
+Default                                  : No
+Forced                                   : No
+Forced                                   : No
+
+Text #3
+Count                                    : 238
+Count of stream of this kind             : 6
+Kind of stream                           : Text
+Kind of stream                           : Text
+Stream identifier                        : 2
+Stream identifier                        : 3
+StreamOrder                              : 5
+ID                                       : 6
+ID                                       : 6
+Unique ID                                : 6
+Format                                   : PGS
+Format                                   : PGS
+Commercial name                          : PGS
+Codec ID                                 : S_HDMV/PGS
+Codec ID/Info                            : Picture based subtitle format used on BDs/HD-DVDs
+Duration                                 : 0.000000
+Duration                                 : 00:00:00.000
+Duration                                 : 00:00:00.000
+Bit rate                                 : 5952
+Bit rate                                 : 5 952 b/s
+Frame count                              : 1592
+Count of elements                        : 1592
+Stream size                              : 6309865
+Stream size                              : 6.02 MiB
+Stream size                              : 6 MiB
+Stream size                              : 6.0 MiB
+Stream size                              : 6.02 MiB
+Stream size                              : 6.018 MiB
+Default                                  : No
+Default                                  : No
+Forced                                   : No
+Forced                                   : No
+
+Text #4
+Count                                    : 238
+Count of stream of this kind             : 6
+Kind of stream                           : Text
+Kind of stream                           : Text
+Stream identifier                        : 3
+Stream identifier                        : 4
+StreamOrder                              : 6
+ID                                       : 7
+ID                                       : 7
+Unique ID                                : 7
+Format                                   : PGS
+Format                                   : PGS
+Commercial name                          : PGS
+Codec ID                                 : S_HDMV/PGS
+Codec ID/Info                            : Picture based subtitle format used on BDs/HD-DVDs
+Duration                                 : 0.000000
+Duration                                 : 00:00:00.000
+Duration                                 : 00:00:00.000
+Bit rate                                 : 6700
+Bit rate                                 : 6 700 b/s
+Frame count                              : 1648
+Count of elements                        : 1648
+Stream size                              : 6824380
+Stream size                              : 6.51 MiB
+Stream size                              : 7 MiB
+Stream size                              : 6.5 MiB
+Stream size                              : 6.51 MiB
+Stream size                              : 6.508 MiB
+Default                                  : No
+Default                                  : No
+Forced                                   : No
+Forced                                   : No
+
+Text #5
+Count                                    : 238
+Count of stream of this kind             : 6
+Kind of stream                           : Text
+Kind of stream                           : Text
+Stream identifier                        : 4
+Stream identifier                        : 5
+StreamOrder                              : 7
+ID                                       : 8
+ID                                       : 8
+Unique ID                                : 8
+Format                                   : PGS
+Format                                   : PGS
+Commercial name                          : PGS
+Codec ID                                 : S_HDMV/PGS
+Codec ID/Info                            : Picture based subtitle format used on BDs/HD-DVDs
+Duration                                 : 0.000000
+Duration                                 : 00:00:00.000
+Duration                                 : 00:00:00.000
+Bit rate                                 : 11984
+Bit rate                                 : 12.0 kb/s
+Frame count                              : 3312
+Count of elements                        : 3312
+Stream size                              : 12723601
+Stream size                              : 12.1 MiB
+Stream size                              : 12 MiB
+Stream size                              : 12 MiB
+Stream size                              : 12.1 MiB
+Stream size                              : 12.13 MiB
+Default                                  : No
+Default                                  : No
+Forced                                   : No
+Forced                                   : No
+
+Text #6
+Count                                    : 238
+Count of stream of this kind             : 6
+Kind of stream                           : Text
+Kind of stream                           : Text
+Stream identifier                        : 5
+Stream identifier                        : 6
+StreamOrder                              : 8
+ID                                       : 9
+ID                                       : 9
+Unique ID                                : 9
+Format                                   : PGS
+Format                                   : PGS
+Commercial name                          : PGS
+Codec ID                                 : S_HDMV/PGS
+Codec ID/Info                            : Picture based subtitle format used on BDs/HD-DVDs
+Duration                                 : 0.000000
+Duration                                 : 00:00:00.000
+Duration                                 : 00:00:00.000
+Bit rate                                 : 13045
+Bit rate                                 : 13.0 kb/s
+Frame count                              : 3297
+Count of elements                        : 3297
+Stream size                              : 13429116
+Stream size                              : 12.8 MiB
+Stream size                              : 13 MiB
+Stream size                              : 13 MiB
+Stream size                              : 12.8 MiB
+Stream size                              : 12.81 MiB
+Default                                  : No
+Default                                  : No
+Forced                                   : No
+Forced                                   : No

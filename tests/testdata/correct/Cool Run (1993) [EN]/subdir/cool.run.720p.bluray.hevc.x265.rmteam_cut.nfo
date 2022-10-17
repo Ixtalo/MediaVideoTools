@@ -1,0 +1,71 @@
+General
+Unique ID                                : 206527527543493203174255234015860453116 (0x9B5FC1454BD900B5C94E947E65CD6EFC)
+Complete name                            : cool.runnings.1993.720p.bluray.hevc.x265.rmteam_cut.mkv
+Format                                   : Matroska
+Format version                           : Version 4
+File size                                : 21.4 KiB
+Duration                                 : 1 s 20 ms
+Overall bit rate                         : 172 kb/s
+Movie name                               : Cool Runnings - RMTeam, RMZ.cr
+Description                              : Encoded By RMTeam, http://RMZ.cr
+Writing application                      : Lavf58.20.100
+Writing library                          : Lavf58.20.100
+ErrorDetectionType                       : Per level 1
+
+Video
+ID                                       : 1
+Format                                   : HEVC
+Format/Info                              : High Efficiency Video Coding
+Format profile                           : Main@L3.1@Main
+Codec ID                                 : V_MPEGH/ISO/HEVC
+Bit rate                                 : 6 456 kb/s
+Width                                    : 1 280 pixels
+Height                                   : 696 pixels
+Display aspect ratio                     : 1.85:1
+Frame rate mode                          : Constant
+Frame rate                               : 23.976 (24000/1001) FPS
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Bit depth                                : 8 bits
+Bits/(Pixel*Frame)                       : 0.302
+Stream size                              : 4.43 GiB
+Writing library                          : x265 2.2+35-fe2f2dd96f8c:[Linux][GCC 5.4.1][64 bit] 8bit+10bit+12bit
+Encoding settings                        : cpuid=1173503 / frame-threads=3 / wpp / no-pmode / no-pme / no-psnr / no-ssim / log-level=2 / input-csp=1 / input-res=1280x696 / interlace=0 / total-frames=0 / level-idc=0 / high-tier=1 / uhd-bd=0 / ref=3 / no-allow-non-conformance / no-repeat-headers / annexb / no-aud / no-hrd / info / hash=0 / no-temporal-layers / open-gop / min-keyint=23 / keyint=250 / bframes=4 / b-adapt=2 / b-pyramid / bframe-bias=0 / rc-lookahead=20 / lookahead-slices=0 / scenecut=40 / no-intra-refresh / ctu=64 / min-cu-size=8 / no-rect / no-amp / max-tu-size=32 / tu-inter-depth=1 / tu-intra-depth=1 / limit-tu=0 / rdoq-level=0 / dynamic-rd=0.00 / signhide / no-tskip / nr-intra=0 / nr-inter=0 / no-constrained-intra / strong-intra-smoothing / max-merge=2 / limit-refs=3 / no-limit-modes / me=1 / subme=2 / merange=57 / temporal-mvp / weightp / no-weightb / no-analyze-src-pics / deblock=0:0 / sao / no-sao-non-deblock / rd=3 / no-early-skip / rskip / no-fast-intra / no-tskip-fast / no-cu-lossless / no-b-intra / rdpenalty=0 / psy-rd=2.00 / psy-rdoq=0.00 / no-rd-refine / analysis-mode=0 / no-lossless / cbqpoffs=0 / crqpoffs=0 / rc=crf / crf=24.0 / qcomp=0.60 / qpstep=4 / stats-write=0 / stats-read=0 / ipratio=1.40 / pbratio=1.30 / aq-mode=1 / aq-strength=1.00 / cutree / zone-count=0 / no-strict-cbr / qg-size=32 / no-rc-grain / qpmax=69 / qpmin=0 / sar=1 / overscan=0 / videoformat=5 / range=0 / colorprim=2 / transfer=2 / colormatrix=2 / chromaloc=0 / display-window=0 / max-cll=0,0 / min-luma=0 / max-luma=255 / log2-max-poc-lsb=8 / vui-timing-info / vui-hrd-info / slices=1 / opt-qp-pps / opt-ref-list-length-pps / no-multi-pass-opt-rps / scenecut-bias=0.05 / no-opt-cu-delta-qp / no-aq-motion / no-hdr
+Default                                  : Yes
+Forced                                   : No
+Color range                              : Limited
+
+Audio
+ID                                       : 2
+Format                                   : AAC LC
+Format/Info                              : Advanced Audio Codec Low Complexity
+Codec ID                                 : A_AAC-2
+Duration                                 : 1 s 20 ms
+Bit rate                                 : 1 509 kb/s
+Channel(s)                               : 2 channels
+Channel layout                           : L R
+Sampling rate                            : 48.0 kHz
+Frame rate                               : 46.875 FPS (1024 SPF)
+Compression mode                         : Lossy
+Stream size                              : 1.04 GiB
+Writing library                          : Lavc57.64.101 aac
+Language                                 : English
+Default                                  : Yes
+Forced                                   : No
+
+Text
+ID                                       : 3
+Format                                   : ASS
+Codec ID                                 : S_TEXT/ASS
+Codec ID/Info                            : Advanced Sub Station Alpha
+Bit rate                                 : 70 b/s
+Count of elements                        : 1195
+Compression mode                         : Lossless
+Stream size                              : 47.7 KiB
+Writing library                          : Lavc57.64.101 ssa
+Language                                 : English
+Default                                  : No
+Forced                                   : No
+
+Menu
+00:00:00.000                             : :00:00:00.000

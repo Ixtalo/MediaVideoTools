@@ -1,0 +1,37 @@
+General
+Complete name                            : poe-dgk_cut.avi
+Format                                   : AVI
+Format/Info                              : Audio Video Interleave
+File size                                : 64.8 KiB
+Duration                                 : 992 ms
+Overall bit rate                         : 535 kb/s
+Writing application                      : Lavf58.20.100
+
+Video
+ID                                       : 0
+Format                                   : MPEG-4 Visual
+Codec ID                                 : XVID
+Codec ID/Hint                            : XviD
+Duration                                 : 1 s 1 ms
+Width                                    : 720 pixels
+Height                                   : 304 pixels
+Display aspect ratio                     : 2.35:1
+Frame rate                               : 23.976 (24000/1001) FPS
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Scan type                                : Progressive
+Compression mode                         : Lossy
+
+Audio
+ID                                       : 1
+Format                                   : AC-3
+Format/Info                              : Audio Coding 3
+Codec ID                                 : 00002000-0000-0010-8000-00AA00389B71
+Duration                                 : 992 ms
+Bit rate                                 : 448 kb/s
+Channel(s)                               : 6 channels
+Channel layout                           : L R C LFE Ls Rs
+Sampling rate                            : 48.0 kHz
+Bit depth                                : 16 bits
+Compression mode                         : Lossy
+Stream size                              : 54.2 KiB (84%)
