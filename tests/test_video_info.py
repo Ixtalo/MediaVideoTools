@@ -4,11 +4,13 @@
 
 from io import StringIO
 from pathlib import Path
+
 import pytest
 from docopt import DocoptExit
-from video_info import scan, main
 
-TESTDATA_RUNTIME_OUTPUT_LENGTH = 3991
+from mediavideotools.video_info import scan, main
+
+TESTDATA_RUNTIME_OUTPUT_LENGTH = 4125
 
 
 def test_scan():
@@ -17,6 +19,14 @@ def test_scan():
     scan(Path("./testdata"), output_stream=out)
     actual = out.getvalue()
     assert len(actual) == TESTDATA_RUNTIME_OUTPUT_LENGTH
+
+
+def test_scan_nodir():
+    """Test the main scanning method."""
+    with pytest.raises(NotADirectoryError):
+        scan(Path("NOT_A_DIR"))
+    with pytest.raises(NotADirectoryError):
+        scan(Path("__init__.py"))
 
 
 # https://docs.pytest.org/en/latest/how-to/capture-stdout-stderr.html#accessing-captured-output-from-a-test-function
@@ -32,11 +42,14 @@ def test_main(monkeypatch, capsys):
     assert captured.err == ""
     # pushd tests && python ../video_info.py ./testdata/ 2>/dev/null
     lines = captured.out.splitlines()
-    assert len(lines) == 25
-    assert lines[0] == "filename;file_size;format;duration;video_codecs;audio_codecs;audio_language_list;text_language_list;format;format_profile;encoded_library_name;bit_rate;bit_rate_mode;pixel_aspect_ratio;proportion_of_this_stream"
+    assert len(lines) == 26
+    assert lines[
+        0] == "filename;file_size;format;duration;video_codecs;audio_codecs;audio_language_list;text_language_list;format;format_profile;encoded_library_name;bit_rate;bit_rate_mode;pixel_aspect_ratio;proportion_of_this_stream"
     assert len(lines[1].split(";")) == 15
-    assert lines[1].startswith('"testdata/correct/Cool Run (1993) [EN]/subdir/cool.run.720p.bluray.hevc.x265.rmteam_cut.mkv";')
-    assert lines[1].endswith(";Matroska;1020;;AAC LC;English;English;HEVC;Main@L3.1@Main;x265;6455885;;1.000;")
+    assert lines[1].startswith(
+        '"testdata/correct/Cool Run (1993) [EN]/subdir/cool.run.720p.bluray.hevc.x265.rmteam_cut.mkv";')
+    assert lines[1].endswith(
+        ";Matroska;1020;;AAC LC;English;English;HEVC;Main@L3.1@Main;x265;6455885;;1.000;")
 
 
 def test_main_invalidparams(monkeypatch):
@@ -100,7 +113,16 @@ def test_main_output_verbose(monkeypatch, capsys, caplog):
     captured = capsys.readouterr()
     assert len(captured.out) == TESTDATA_RUNTIME_OUTPUT_LENGTH
     assert captured.err == ""
-    assert len(caplog.messages) == 77
+    assert len(caplog.messages) == 111
     assert caplog.messages[0].startswith("Video Info to CSV ")
     assert caplog.messages[1].startswith("base path: ")
     assert caplog.messages[2] == "output: <_io.TextIOWrapper encoding='UTF-8'>"
+
+
+def test_main_outputfilexists(monkeypatch):
+    """Test the main() method with verbose output."""
+    # overwrite/monkeypatch sys.argv
+    monkeypatch.setattr("sys.argv", ("foo", "--verbose",
+                        "./testdata", "--out", "__init__.py"))
+    with pytest.raises(FileExistsError):
+        main()

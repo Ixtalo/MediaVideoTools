@@ -5,7 +5,8 @@
 # pylint: disable=missing-function-docstring, line-too-long, invalid-name
 
 import xml.etree.ElementTree as ET
-from mkv_metadata import mkv_produce_metadata
+
+from mediavideotools.mkv_metadata import mkv_produce_metadata
 
 
 def test_mkv_produce_metadata_empty():
@@ -38,7 +39,8 @@ def test_mkv_produce_metadata_onlycustommetadata():
 def test_mkv_produce_metadata_ok():
     meta_standard = {"foo1": "bar1", "foo2": 22}
     meta_custom = {"custom1": "bla1", "custom2": 222}
-    actual = mkv_produce_metadata(meta_standard=meta_standard, meta_custom=meta_custom)
+    actual = mkv_produce_metadata(
+        meta_standard=meta_standard, meta_custom=meta_custom)
     assert isinstance(actual, ET.ElementTree)
     xml_str = ET.tostring(actual.getroot(), encoding='utf8', method='xml')
     assert xml_str == (b"<?xml version='1.0' encoding='utf8'?>\n<Tags><Tag><Simple><Name>foo1</Nam"

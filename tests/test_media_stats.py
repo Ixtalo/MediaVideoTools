@@ -6,14 +6,16 @@
 
 from io import StringIO
 from pathlib import Path
+
 import pytest
 from docopt import DocoptExit
-from media_stats import DirectoryMediaStats, MyMediaInfo, scan, get_media_file_info, main
+
+from mediavideotools.media_stats import \
+    DirectoryMediaStats, MyMediaInfo, scan, get_media_file_info, main
 
 # pushd tests && python ../media_stats.py -v ./testdata/ 2>/dev/null
 TESTDATA_OUTPUT = """path;level;num_entries;cum_filesize_bytes;cum_duration_seconds;mean_bit_rate
 "testdata/incorrect/NamesWithDelimiter(a;b)";3;1;21960;1.02;172235.0
-"testdata/incorrect/mp3";3;1;48057;95.608;236803.0
 "testdata/incorrect/lang/missing_EN_toomuch_DE [DE]";4;1;11228;0.125;718592.0
 "testdata/incorrect/lang/mixed_missing_EN [DE]";4;2;21365;0.25;683680.0
 "testdata/incorrect/lang/mixed_missing_DE_EN_toomuch_XX [XX]";4;2;21365;0.25;683680.0
@@ -23,10 +25,11 @@ TESTDATA_OUTPUT = """path;level;num_entries;cum_filesize_bytes;cum_duration_seco
 "testdata/incorrect/lang/mixed_missing_DE_EN";4;2;21365;0.25;683680.0
 "testdata/incorrect/lang";3;7;128190;1.5;683680.0
 "testdata/incorrect/no_duration";3;1;46676;3.142;0
-"testdata/incorrect";2;4;244883;101.27;273179.5
+"testdata/incorrect";2;3;196826;5.662;285305.0
 "testdata/correct/Der Stiefelkater (2011) [DE]";3;1;66352;0.992;535097.0
 "testdata/correct/SampleVideoFlv";3;1;119684;1.001;956515.0
 "testdata/correct/SampleVideoMkvDone";3;2;481382;2.004;1921684.5
+"testdata/correct/symlinks";3;1;242994;1.002;1940072.0
 "testdata/correct/Forrest Video (1994) [DE][EN]";3;1;278565;1.009;2208642.0
 "testdata/correct/lang/mixed [DE][EN]";4;2;21365;0.25;683680.0
 "testdata/correct/lang";3;1;21365;0.25;683680.0
@@ -34,12 +37,12 @@ TESTDATA_OUTPUT = """path;level;num_entries;cum_filesize_bytes;cum_duration_seco
 "testdata/correct/Unicode-äöüß";3;1;242994;1.002;1940072.0
 "testdata/correct/Cool Run (1993) [EN]/subdir";4;1;21960;1.02;172235.0
 "testdata/correct/Cool Run (1993) [EN]";3;1;21960;1.02;172235.0
-"testdata/correct";2;9;1527375;11.519;1165110.6
-"testdata";1;2;1772258;112.789;719145.1
+"testdata/correct";2;10;1770369;12.521;1242606.7
+"testdata";1;2;1967195;18.183;763955.8
 """
 
 # pushd tests && python ../media_stats.py -v . 2>/dev/null | tail -1
-TESTDATA_OUTPUT_MAINDIR_EXTRALINE = '".";0;1;1772258;112.789;719145.1'
+TESTDATA_OUTPUT_MAINDIR_EXTRALINE = '".";0;1;1967195;18.183;763955.8'
 
 
 class TestMyMediaStats:
@@ -49,8 +52,10 @@ class TestMyMediaStats:
 
     def test_constructor_invalid(self):
         with pytest.raises(TypeError):
+            # noinspection PyTypeChecker
             MyMediaInfo(None)
         with pytest.raises(TypeError):
+            # noinspection PyTypeChecker
             MyMediaInfo("ASTRING")
 
 
@@ -75,8 +80,10 @@ class TestDirectoryMediaStats:
 
     def test_constructor_invalid(self):
         with pytest.raises(TypeError):
+            # noinspection PyTypeChecker
             DirectoryMediaStats(None)
         with pytest.raises(TypeError):
+            # noinspection PyTypeChecker
             DirectoryMediaStats("ASTRING")
 
     def test_path_setter(self):
@@ -89,7 +96,8 @@ class TestDirectoryMediaStats:
         assert str(DirectoryMediaStats(Path("foobar/"))) == ""
 
     def test_str(self, example_dirmediastats):
-        assert str(example_dirmediastats) == f"\"{Path('.', 'foo', 'bar')}\";2;1;0.1;0.2;0.3"
+        assert str(
+            example_dirmediastats) == f"\"{Path('.', 'foo', 'bar')}\";2;1;0.1;0.2;0.3"
 
     def test_str_paths(self, example_mediainfo):
         paths = {
@@ -204,7 +212,7 @@ def test_scan():
         assert line in actual
 
 
-def test_scan_maindir():
+def test_scan_testsdir():
     sio = StringIO()
     scan(Path("."), output_stream=sio)
     actual = sio.getvalue()
@@ -214,8 +222,10 @@ def test_scan_maindir():
 
 
 def test_get_media_file_info():
-    mmi = get_media_file_info(Path("./testdata/correct/SampleVideoMkv/SampleVideo_1280x720_1sec.mkv"))
-    assert mmi.path == Path("./testdata/correct/SampleVideoMkv/SampleVideo_1280x720_1sec.mkv")
+    mmi = get_media_file_info(
+        Path("./testdata/correct/SampleVideoMkv/SampleVideo_1280x720_1sec.mkv"))
+    assert mmi.path == Path(
+        "./testdata/correct/SampleVideoMkv/SampleVideo_1280x720_1sec.mkv")
     assert mmi.file_size == 242994
     assert mmi.duration == 1.002
     assert mmi.bit_rate == 1940072
@@ -229,7 +239,7 @@ def test_get_media_file_info_nosuchfile():
 
 def test_get_media_file_info_invalid():
     with pytest.raises(TypeError):
-        # pylint: disable-next=pointless-statement
+        # noinspection PyTypeChecker
         get_media_file_info("ASTRING")
 
 
@@ -246,7 +256,7 @@ def test_main(monkeypatch, capsys, caplog):
     """Test the main() method by monkeypatching sys.argv and capturing STDOUT,
     STDERR and logging output."""
     # overwrite/monkeypatch sys.argv
-    monkeypatch.setattr("sys.argv", ("foo", "--verbose", "./testdata/"))
+    monkeypatch.setattr("sys.argv", ("foo", "./testdata/"))
     # do action
     main()
     # check
@@ -254,29 +264,11 @@ def test_main(monkeypatch, capsys, caplog):
     for line in TESTDATA_OUTPUT.splitlines():
         assert line in captured.out
     assert captured.err == ""
-    assert len(caplog.messages) == 13
-    assert caplog.messages[0].startswith("Media Files Statistics ")
-    assert caplog.messages[1].startswith("base path: ")
-    assert caplog.messages[2] == "output: <_io.TextIOWrapper encoding='UTF-8'>"
-
-
-def test_main_maindir(monkeypatch, capsys, caplog):
-    """Test the main() method by monkeypatching sys.argv and capturing STDOUT,
-    STDERR and logging output."""
-    # overwrite/monkeypatch sys.argv
-    monkeypatch.setattr("sys.argv", ("foo", "--verbose", "."))
-    # do action
-    main()
-    # check
-    captured = capsys.readouterr()
-    for line in TESTDATA_OUTPUT.splitlines():
-        assert line in captured.out
-    assert TESTDATA_OUTPUT_MAINDIR_EXTRALINE in captured.out
-    assert captured.err == ""
-    assert len(caplog.messages) == 13
-    assert caplog.messages[0].startswith("Media Files Statistics ")
-    assert caplog.messages[1].startswith("base path: ")
-    assert caplog.messages[2] == "output: <_io.TextIOWrapper encoding='UTF-8'>"
+    assert len(caplog.messages) == 10
+    assert caplog.messages[0] == \
+        "MediaInfo detection problems, trying with ffprobe for: testdata/incorrect/nocontent.mkv"
+    assert caplog.messages[2] == \
+        "Skipping file with invalid duration: testdata/incorrect/nocontent.mkv"
 
 
 def test_main_invalidparams(monkeypatch):
@@ -300,7 +292,7 @@ def test_main_invalidparams(monkeypatch):
         main()
 
     # mandatory basepath argument is missing!
-    monkeypatch.setattr("sys.argv", ("foo", ))
+    monkeypatch.setattr("sys.argv", ("foo",))
     with pytest.raises(DocoptExit):
         main()
 

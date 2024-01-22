@@ -4,9 +4,12 @@
 # pylint: disable=missing-function-docstring
 
 from pathlib import Path
+
 import pytest
 from docopt import DocoptExit
-from video_language_check import __get_path_languages, __get_missing_in_path, __get_toomuch_in_path, \
+
+from mediavideotools.video_language_check import __get_path_languages, \
+    __get_missing_in_path, __get_toomuch_in_path, \
     get_track_languages_for_file, get_track_languages_for_files, \
     scan, main
 
@@ -14,10 +17,13 @@ from video_language_check import __get_path_languages, __get_missing_in_path, __
 def test_get_path_languages():
     assert __get_path_languages(Path("./parent/foobar bla/file.xx")) == set()
     assert __get_path_languages(Path("./parent/foobar [XX]/file.xx")) == {"XX"}
-    assert __get_path_languages(Path("./parent/foobar [XX][DE]/file.xx")) == {"XX", "DE"}
+    assert __get_path_languages(
+        Path("./parent/foobar [XX][DE]/file.xx")) == {"XX", "DE"}
 
-    assert __get_path_languages(Path("./parent/foobar bla/file.xx"), use_full_path=False) == set()
-    assert __get_path_languages(Path("./parent [XX]/foobar [DE]/file.xx"), use_full_path=False) == {"DE"}
+    assert __get_path_languages(
+        Path("./parent/foobar bla/file.xx"), use_full_path=False) == set()
+    assert __get_path_languages(
+        Path("./parent [XX]/foobar [DE]/file.xx"), use_full_path=False) == {"DE"}
 
 
 def test_get_toomuch_in_path():
@@ -43,7 +49,8 @@ def test_get_track_languages_for_file_ok():
 
 
 def test_get_track_languages_for_file_nolang():
-    filepath = Path("./testdata/correct/SampleVideoFlv/sample_640x360_1sec.flv")
+    filepath = Path(
+        "./testdata/correct/SampleVideoFlv/sample_640x360_1sec.flv")
     actual = get_track_languages_for_file(filepath)
     expected = set()
     assert actual == expected
@@ -57,6 +64,7 @@ def test_get_track_languages_for_file_novideofile():
 
 def test_get_track_languages_for_file_invalid():
     with pytest.raises(TypeError):
+        # noinspection PyTypeChecker
         get_track_languages_for_file("JustAStringNotAPath")
     with pytest.raises(IsADirectoryError):
         get_track_languages_for_file(Path("."))  # a directory, not a file
@@ -67,7 +75,8 @@ def test_get_track_languages_for_file_invalid():
 def test_get_track_languages_for_files_ok1():
     paths = [
         Path("./testdata/README.md"),  # ignored
-        Path("./testdata/correct/lang/mixed [DE][EN]/boundin.2003.720p.bluray.sinners_s_x265.mkv"),
+        Path(
+            "./testdata/correct/lang/mixed [DE][EN]/boundin.2003.720p.bluray.sinners_s_x265.mkv"),
     ]
     actual = get_track_languages_for_files(paths)
     assert actual == {'EN'}
@@ -76,7 +85,8 @@ def test_get_track_languages_for_files_ok1():
 def test_get_track_languages_for_files_ok2():
     paths = [
         Path("./testdata/README.md"),  # ignored
-        Path("./testdata/correct/lang/mixed [DE][EN]/boundin.2003.720p.bluray.sinners_s_x265.mkv"),
+        Path(
+            "./testdata/correct/lang/mixed [DE][EN]/boundin.2003.720p.bluray.sinners_s_x265.mkv"),
         Path(
             "./testdata/correct/lang/mixed [DE][EN]/Pixar_Short_Films_Collection_Volume_2_dein freund die ratte_s_x265.mkv")
     ]
@@ -86,6 +96,7 @@ def test_get_track_languages_for_files_ok2():
 
 def test_scan():
     with pytest.raises(AssertionError):
+        # noinspection PyTypeChecker
         scan("DOESNOTEXIST")
     with pytest.raises(NotADirectoryError):
         scan(Path("DOESNOTEXIST"))

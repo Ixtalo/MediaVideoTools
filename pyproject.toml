@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "mediavideotools"
+version = "1.0.2"
+description = "Various tools for (video) media information (e.g., MKV)."
+authors = ["Ixtalo <ixtalo@users.noreply.github.com>"]
+license = "AGPL"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+docopt = "*"
+pymediainfo = "*"
+arrow = "*"
+python-magic = "*"
+colorlog = "*"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "*"
+pylint = "*"
+pytest = "*"
+pytest-sugar = "*"
+pytest-cov = "*"
+pytest-clarity = "*"
+pytest-icdiff = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+## https://flake8.pycqa.org/en/latest/user/configuration.html
+## https://github.com/john-hen/Flake8-pyproject
+[tool.flake8]
+ignore = ["E501"]
+per-file-ignores = [
+    '__init__.py:F401',
+]
+max-line-length = 120
+count = true
+
+
+## http://www.pydocstyle.org/en/stable/usage.html#configuration-files
+[tool.pydocstyle]
+#match_dir='^[^\.t].+$'
+#match_dir = '[^/].+'
+
+## https://docs.pytest.org/en/7.1.x/reference/customize.html#pyproject-toml
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = ["tests",]
+
+## https://coverage.readthedocs.io/en/latest/source.html#source
+[tool.coverage.run]
+omit = ["tests/*", "__init__.py"]

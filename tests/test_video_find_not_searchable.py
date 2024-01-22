@@ -4,11 +4,13 @@
 
 from io import StringIO
 from pathlib import Path
+
 import pytest
 from docopt import DocoptExit
-from video_find_not_searchable import scan, main
 
-TESTDATA_RUNTIME_OUTPUT_LENGTH = 791
+from mediavideotools.video_find_not_searchable import scan, main
+
+TESTDATA_RUNTIME_OUTPUT_LENGTH = 925
 
 
 def test_scan():
@@ -31,7 +33,7 @@ def test_main(monkeypatch, capsys):
     captured = capsys.readouterr()
     assert captured.err == ""
     assert "filename;format;codecs_video;video_format_list;video_language_list;duration;audio_codecs;audio_format_list;audio_language_list;text_language_list;count_of_audio_streams;count_of_menu_streams;count_of_stream_of_this_kind;count_of_text_streams;count_of_video_streams" in captured.out
-    assert "testdata/correct/Der Stiefelkater (2011) [DE]/poe-dgk_cut.avi;AVI;MPEG-4 Visual;MPEG-4 Visual;;992;AC-3;AC-3;;;1;;1;;1" in captured.out
+    assert "testdata/correct/Der Stiefelkater (2011) [DE]/poe-dgk_cut_x264.avi;AVI;MPEG-4 Visual;MPEG-4 Visual;;992;AC-3;AC-3;;;1;;1;;1" in captured.out
     assert "testdata/correct/SampleVideoMkv/SampleVideo_1280x720_1sec.mkv;Matroska;MPEG-4 Visual;MPEG-4 Visual;;1002;AAC LC;AAC LC;;;1;;1;;1" in captured.out
     assert "testdata/correct/SampleVideoMkvDone/SampleVideo_1280x720_1mb_1sec.mkv.x265done;Matroska;MPEG-4 Visual;MPEG-4 Visual;;1002;AAC LC;AAC LC;;;1;;1;;1" in captured.out
     assert "testdata/correct/Unicode-äöüß/SampleVideo_1280x720_1sec_äöüß.mkv;Matroska;MPEG-4 Visual;MPEG-4 Visual;;1002;AAC LC;AAC LC;;;1;;1;;1" in captured.out
@@ -58,7 +60,7 @@ def test_main_invalidparams(monkeypatch):
         main()
 
     # mandatory basepath argument is missing!
-    monkeypatch.setattr("sys.argv", ("foo", ))
+    monkeypatch.setattr("sys.argv", ("foo",))
     with pytest.raises(DocoptExit):
         main()
 

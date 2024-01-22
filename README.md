@@ -20,19 +20,19 @@ x265/HEVC, video language checks, checks for filenames, automatic renaming, etc.
 ## Requirements
 
 - Python 3.9+
-- [pipenv](https://pipenv.pypa.io/)
+- Poetry (see https://python-poetry.org/docs/#installation)
 - On MS Windows: extra manual installation of libmagic is necessary.
-    1. `pipenv install python-magic-bin`
+    1. `poetry add python-magic-bin`
     2. Download and place https://github.com/nscaife/file-windows/releases/tag/20170108 into `.`
        (c.f. https://github.com/julian-r/python-magic#dependencies)
 
 ## How-To Use
 
 1. Preparations (see above):
-    1. install pipenv: `python3 -m pip install --user pipenv`
+    1. install poetry: https://python-poetry.org/docs/#installation
     2. on MS Windows, install libmagic binaries (see above)
-2. `pipenv sync`
-3. `pipenv run python <tool.py> --help`
+2. `poetry install --only=main`
+3. `poetry run python mediavideotools/<tool.py> --help`
 
 ## Video Filename Language Check (video_language_check)
 

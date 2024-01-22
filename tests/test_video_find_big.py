@@ -3,20 +3,24 @@
 """Unit tests."""
 
 from pathlib import Path
+
 import pytest
 from docopt import DocoptExit
-from video_find_big import scan_file, main
+
+from mediavideotools.video_find_big import scan_file, main
 
 
 def test_scan_file_invalid():
     """Test with an invalid argument type."""
     with pytest.raises(AssertionError):
+        # noinspection PyTypeChecker
         scan_file("NOTAPATHOBJECTBUTSTR")
 
 
 def test_scan_file(capsys):
     """Test the main scanning method."""
-    result = scan_file(Path("./testdata/correct/SampleVideoMkv/SampleVideo_1280x720_1sec.mkv"))
+    result = scan_file(
+        Path("./testdata/correct/SampleVideoMkv/SampleVideo_1280x720_1sec.mkv"))
     assert result == 0
     captured = capsys.readouterr()
     assert captured.out == ""
